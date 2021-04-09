@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+## Steps to setup go and grpc
 
-You can use the [editor on GitHub](https://github.com/VikasManohar/go-grpc-setup/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+- Setup Go:
+1. Download and install [golang](https://golang.org/doc/install)
+2. run `go version` command in terminal to verify the installation.
+3. Confirm that the command prints the installed version of Go.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- Setup Protoc:
+1. [Download the windows archive](https://github.com/google/protobuf/releases)
+2. Create a folder called _Proto3_ in _C_ Drive and extract the zip file into the folder.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+Your directory structure should now be:
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+C:\proto3\bin 
+C:\proto3\include
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- Setup grpc for Go [Go grpc github](https://github.com/grpc/grpc-go)
 
-### Jekyll Themes
+With Go module support (Go 1.11+), simply add the following import
+`import "google.golang.org/grpc"`
+to your code, and then `go [build|run|test]` will automatically fetch the necessary dependencies.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/VikasManohar/go-grpc-setup/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Otherwise, to install the grpc-go package, run the following command:
 
-### Support or Contact
+`$ go get -u google.golang.org/grpc`
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Setup protobuf [Protobuf github](https://github.com/golang/protobuf)
+
+Old way: `$ go get -u github.com/golang/protobuf/protoc-gen-go`
+
+New way: `$ go get -u google.golang.org/protobuf`
