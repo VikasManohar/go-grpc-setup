@@ -14,7 +14,7 @@ Your directory structure should now be:
 C:\proto3\bin 
 C:\proto3\include
 ```
-Add ``` C:\proto3\bin``` to ``` Path``` environment variable so that ```protoc``` command can be run from anywhere.
+3. Add ``` C:\proto3\bin``` to ``` Path``` environment variable so that ```protoc``` command can be run from anywhere.
 - Setup grpc for Go [Go grpc github](https://github.com/grpc/grpc-go)
 
 With Go module support (Go 1.11+), simply add the following import
